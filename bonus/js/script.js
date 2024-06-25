@@ -54,6 +54,11 @@ const { createApp } = Vue;
             if(this.activeImg < 0){
                 this.activeImg = this.slides.length - 1;
             };  
+        },
+
+        // al click su una thumb, visualizzare in grande l’immagine corrispondente
+        clickThumb(){
+            
         }
     }
   }).mount('#app');
