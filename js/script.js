@@ -32,5 +32,13 @@ const { createApp } = Vue;
             }
         ]
       };
+    },
+    methods: {
+        nextImage(){
+            this.activeImg++;
+            if(this.activeImg > this.slides.length - 1){
+                this.activeImg = 0;
+            };
+        }
     }
   }).mount('#app');
