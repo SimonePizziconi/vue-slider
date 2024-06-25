@@ -4,6 +4,7 @@ const { createApp } = Vue;
     data() {
     return {
         activeImg: 0,
+        autoPlay: false,
         slides: [
             {
             image: 'img/01.webp',
@@ -43,6 +44,8 @@ const { createApp } = Vue;
             if(this.activeImg > this.slides.length - 1){
                 this.activeImg = 0;
             };
+
+            // 
         },
 
         // Aggiungiamo metodo per andare indietro con immagini
@@ -56,9 +59,14 @@ const { createApp } = Vue;
             };  
         },
 
-        // al click su una thumb, visualizzare in grande l’immagine corrispondente
-        clickThumb(){
-            
-        }
+        // Fai partire auto play
+        startAutoplay() {
+            this.autoPlay = setInterval(this.nextImage, 3000);
+        },
+
+        // Fai stoppare autoplay
+        stopAutoplay(){
+            clearInterval(this.autoPlay);
+        },
     }
   }).mount('#app');
