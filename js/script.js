@@ -34,11 +34,26 @@ const { createApp } = Vue;
       };
     },
     methods: {
+        // Aggiungiamo metodo per andare avanti con immagini
         nextImage(){
+            // Incrementiamo il valore di activeImg
             this.activeImg++;
+
+            // Condizione che effettua loop infinito
             if(this.activeImg > this.slides.length - 1){
                 this.activeImg = 0;
             };
+        },
+
+        // Aggiungiamo metodo per andare indietro con immagini
+        prevImage(){
+            // Decrementiamo il valore di activeImg
+            this.activeImg--;
+
+            // Condizione che effettua loop infinito
+            if(this.activeImg < 0){
+                this.activeImg = this.slides.length - 1;
+            };  
         }
     }
   }).mount('#app');
