@@ -16,7 +16,7 @@
         <div class="container">
             <div class="slider-wrapper" tabindex="0">
 
-                <div class="item" v-for="obj in slides">
+                <div class="item" v-for="(obj, index) in slides" :key="index" v-show="index === activeImg">
                     <img :src="obj.image" :alt="obj.title" />
                     <div class="text">
                         <h3>{{obj.title}}</h3>
